@@ -123,7 +123,7 @@ function showContactInfo() {
 連絡先情報:
 📧 Email: matsuyama@kataranne.com
 📷 Instagram: @_kataranne
-🌐 Website: 有限会社かたらんね
+🌐 Website: https://matsuyama.vercel.app/
 🎥 YouTube: @-jizo-8659
     `.trim();
     
@@ -271,7 +271,7 @@ VERSION:3.0
 FN:松山ちあき
 N:松山;ちあき;;;
 EMAIL:matsuyama@kataranne.com
-URL:https://kataranne.com/
+URL:https://matsuyama.vercel.app/
 NOTE:歴史文化の旅デザイナー`;
 
         // プロフィール画像がある場合のみ追加
