@@ -121,13 +121,13 @@ function initSocialLinks() {
 function showContactInfo() {
     const contactInfo = `
 連絡先情報:
-📧 Email: kln.keybo@gmail.com
-📱 Phone: 090-4488-7452
-📷 Instagram: @nannichi.kirishima
-🌐 Website: 株式会社ナンニチ
+📧 Email: matsuyama@kataranne.com
+📷 Instagram: @_kataranne
+🌐 Website: 有限会社かたらんね
+🎥 YouTube: @-jizo-8659
     `.trim();
     
-    createCustomModal('竹下圭一郎 - 連絡先情報', contactInfo);
+    createCustomModal('松山ちあき - 連絡先情報', contactInfo);
 }
 
 // カスタムモーダル作成
@@ -260,7 +260,7 @@ async function downloadContactFromModal() {
         // プロフィール画像をBase64で取得（エラーが発生しても続行）
         let profileImageBase64 = '';
         try {
-            profileImageBase64 = await getImageAsBase64('7W2A7485 .jpg');
+            profileImageBase64 = await getImageAsBase64('icon - chiaki matsuyama.jpg');
         } catch (error) {
             console.log('画像取得エラー（続行）:', error);
         }
@@ -268,12 +268,11 @@ async function downloadContactFromModal() {
         // vCardを作成
         let vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:竹下圭一郎
-N:竹下;圭一郎;;;
-EMAIL:kln.keybo@gmail.com
-TEL:09044887452
-URL:https://keiichiro-takeshita-5olw.vercel.app/
-NOTE:建設機械レンタル・販売事業・サッカーチーム運営・地域社会貢献活動`;
+FN:松山ちあき
+N:松山;ちあき;;;
+EMAIL:matsuyama@kataranne.com
+URL:https://kataranne.com/
+NOTE:歴史文化の旅デザイナー`;
 
         // プロフィール画像がある場合のみ追加
         if (profileImageBase64 && profileImageBase64.length > 0) {
@@ -290,7 +289,7 @@ END:VCARD`;
         
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'Takeshita_Keiichiro.vcf'; // 竹下圭一郎のファイル名
+        link.download = 'Matsuyama_Chiaki.vcf'; // 松山ちあきのファイル名
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
