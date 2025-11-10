@@ -123,7 +123,7 @@ function showContactInfo() {
 連絡先情報:
 📧 Email: matsuyama@kataranne.com
 📷 Instagram: @_kataranne
-🌐 Website: https://matsuyama.vercel.app/
+🌐 Website: https://kataranne.com/
 🎥 YouTube: @-jizo-8659
     `.trim();
     
