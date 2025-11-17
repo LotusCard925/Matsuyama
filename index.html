@@ -35,7 +35,7 @@
     <link rel="manifest" href="manifest.json">
     
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -47,7 +47,7 @@
         <!-- バナー画像 -->
         <div class="banner">
             <div class="banner-image">
-                <img src="back1 - chiaki matsuyama.jpeg" alt="Background" class="banner-bg-image clickable-image" onclick="openImageModal('back1 - chiaki matsuyama.jpeg', '')">
+                <img src="line_oa_chat_251117_204255.jpg" alt="Background" class="banner-bg-image clickable-image" onclick="openImageModal('line_oa_chat_251117_204255.jpg', '')">
             </div>
         </div>
 
@@ -78,14 +78,21 @@
             <!-- タブセクション -->
             <div class="tab-section">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="showTab('about')">自己紹介</button>
+                    <button class="tab-btn active" onclick="showTab('about')">About me</button>
                     <button class="tab-btn" onclick="showTab('pictures')">Pictures</button>
                 </div>
                 
                 <div class="tab-content">
                     <div id="about" class="tab-panel active">
-                        <h3>自己紹介</h3>
-                        <p>歴史文化の旅デザイナー</p>
+                        <h3>About me</h3>
+                        <p>遺跡を歩き博物館を巡り、感嘆すること考えることが何よりのご馳走。縦軸（古代の人）からも横軸（他の国や地域）からも教えられることのなんと多いことか。</p>
+                        <p>各地の文化財専門家と歩いた旅は15年。遺跡と博物館の訪問は1,000ヶ所超。旅と講座の参加者はのべ1万人超。</p>
+                        <p>特に力を注いでいるのは韓国と九州の交流です。歴史文化の旅をオーダーメイドしています。</p>
+                        <ul class="about-list">
+                            <li>TOPIK4級（6級挑戦中）</li>
+                            <li>運転歴 40万km超</li>
+                            <li>SAJスキー検定2級（遠い過去）</li>
+                        </ul>
                     </div>
                     
                     <div id="pictures" class="tab-panel">
@@ -118,6 +125,15 @@
                             <div class="picture-item">
                                 <img src="09 - chiaki matsuyama.jpg" alt="Picture 09" class="gallery-image clickable-image" onclick="openImageModal('09 - chiaki matsuyama.jpg', 'Picture 09')">
                             </div>
+                            <div class="picture-item">
+                                <img src="preview.jpeg" alt="Preview Photo" class="gallery-image clickable-image" onclick="openImageModal('preview.jpeg', 'Preview Photo')">
+                            </div>
+                            <div class="picture-item">
+                                <img src="preview (1).jpeg" alt="Preview Photo 1" class="gallery-image clickable-image" onclick="openImageModal('preview (1).jpeg', 'Preview Photo 1')">
+                            </div>
+                            <div class="picture-item">
+                                <img src="preview (3).jpeg" alt="Preview Photo 3" class="gallery-image clickable-image" onclick="openImageModal('preview (3).jpeg', 'Preview Photo 3')">
+                            </div>
                         </div>
                     </div>
                     
@@ -126,58 +142,23 @@
 
             <!-- ソーシャルメディアリンク -->
             <div class="social-links">
-                <a href="mailto:matsuyama@kataranne.com" class="social-link">
-                    <div class="social-icon email">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="social-info">
-                        <div class="social-name">Email</div>
-                        <div class="social-handle">matsuyama@kataranne.com</div>
-                    </div>
-                    <div class="social-arrow">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </a>
-
-                <a href="https://www.instagram.com/_kataranne/" class="social-link" target="_blank">
-                    <div class="social-icon instagram">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <div class="social-info">
-                        <div class="social-name">Instagram</div>
-                        <div class="social-handle">@_kataranne</div>
-                    </div>
-                    <div class="social-arrow">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </a>
-
-                <a href="https://kataranne.com/" class="social-link" target="_blank">
-                    <div class="social-icon website">
-                        <img src="かたらんねロゴ文字無し - chiaki matsuyama.png" alt="かたらんねロゴ" class="website-logo-icon">
-                    </div>
-                    <div class="social-info">
-                        <div class="social-name">Website</div>
-                        <div class="social-handle">有限会社かたらんね</div>
-                    </div>
-                    <div class="social-arrow">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </a>
-
-                <a href="https://www.youtube.com/@-jizo-8659" class="social-link" target="_blank">
-                    <div class="social-icon youtube">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <div class="social-info">
-                        <div class="social-name">YouTube</div>
-                        <div class="social-handle">@-jizo-8659</div>
-                    </div>
-                    <div class="social-arrow">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </a>
-
+                <div class="social-icons-row">
+                    <a href="https://kataranne.com/" class="social-icon-only" target="_blank" aria-label="Website">
+                        <img src="かたらんねロゴ文字無し - chiaki matsuyama.png" alt="Website" class="website-logo-icon">
+                    </a>
+                    <a href="https://report.kataranne.com/" class="social-icon-only" target="_blank" aria-label="Blog">
+                        <i class="fas fa-book-open"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_kataranne/" class="social-icon-only" target="_blank" aria-label="Instagram">
+                        <img src="Instagram_logo_2022.svg" alt="Instagram" class="social-icon-img">
+                    </a>
+                    <a href="https://www.youtube.com/@-jizo-8659" class="social-icon-only" target="_blank" aria-label="YouTube">
+                        <img src="youtube_logo_icon_168737.png" alt="YouTube" class="social-icon-img">
+                    </a>
+                    <a href="https://www.linkedin.com/" class="social-icon-only" target="_blank" aria-label="LinkedIn">
+                        <img src="LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
+                    </a>
+                </div>
             </div>
         </div>
         

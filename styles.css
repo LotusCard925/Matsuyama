@@ -1,4 +1,14 @@
 /* リセットとベーススタイル */
+:root {
+    --accent: #b30218;
+    --base-bg: linear-gradient(135deg, #f4eadc, #efe1ce, #f8eee3);
+    --text-color: #3a2c27;
+    --subtext-color: rgba(58, 44, 39, 0.75);
+    --soft-border: rgba(58, 44, 39, 0.12);
+    --panel-bg: rgba(255, 247, 240, 0.95);
+    --panel-bg-soft: rgba(255, 244, 234, 0.92);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +16,9 @@
 }
 
 body {
-    font-family: 'Zen Old Mincho', serif;
-    background: linear-gradient(135deg, #000000, #0d0d0d, #1a1a1a);
-    color: #ffffff;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    background: var(--base-bg);
+    color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -25,7 +35,7 @@ body {
 
 /* Remove any green status bar or browser chrome */
 html, body {
-    background-color: #000000 !important;
+    background-color: #f7f2ec !important;
     overflow-x: hidden;
 }
 
@@ -37,7 +47,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #000000, #0d0d0d, #1a1a1a);
+    background: var(--base-bg);
     z-index: -1;
 }
 
@@ -52,13 +62,13 @@ body {
 .container {
     max-width: 450px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(220, 20, 60, 0.2);
+    background: var(--panel-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--soft-border);
     border-radius: 24px;
     min-height: 100vh;
     position: relative;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 20px 45px rgba(58, 44, 39, 0.15);
 }
 
 /* ヘッダー */
@@ -71,9 +81,9 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #DC143C;
+    background: #f1d2c0;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(220, 20, 60, 0.8);
+    box-shadow: 0 0 15px rgba(241, 210, 192, 0.6);
 }
 
 /* バナー */
@@ -125,7 +135,7 @@ body {
     width: 100px;
     height: 100px;
     background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(220, 20, 60, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -164,21 +174,21 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 1.5px solid rgba(220, 20, 60, 0.7);
+    border: 1.5px solid rgba(179, 2, 24, 0.7);
     transition: all 0.3s ease;
 }
 
 .profile-image:hover {
     transform: scale(1.05);
-    border-color: rgba(220, 20, 60, 0.9);
+    border-color: rgba(179, 2, 24, 0.9);
 }
 
 .profile-name {
     font-size: 36px;
     font-weight: 800;
-    color: #DC143C;
+    color: var(--accent);
     text-align: center;
-    text-shadow: 0 3px 6px rgba(220, 20, 60, 0.4);
+    text-shadow: 0 3px 6px rgba(179, 2, 24, 0.35);
     margin-bottom: 8px;
     letter-spacing: -1px;
     line-height: 1.4;
@@ -189,26 +199,26 @@ body {
     margin-top: 4px;
     font-size: 0.6em;
     font-weight: 400;
-    color: rgba(220, 20, 60, 0.8);
+    color: rgba(179, 2, 24, 0.8);
 }
 
 .title {
     font-size: 18px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: #1f1410;
     text-align: center;
     margin: 0 0 4px;
     letter-spacing: 0px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .subtitle {
     font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--subtext-color);
     text-align: center;
     margin-bottom: 25px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 /* タグ */
@@ -227,14 +237,14 @@ body {
 }
 
 .tag {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    background: rgba(243, 233, 223, 0.9);
+    color: var(--text-color);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(58, 44, 39, 0.1);
+    backdrop-filter: none;
 }
 
 /* アクションボタン */
@@ -246,9 +256,9 @@ body {
 }
 
 .btn-primary {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-color);
+    border: 1px solid rgba(58, 44, 39, 0.1);
     padding: 16px 24px;
     border-radius: 12px;
     font-size: 16px;
@@ -266,15 +276,15 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+    border-color: rgba(58, 44, 39, 0.25);
+    box-shadow: 0 6px 20px rgba(58, 44, 39, 0.15);
 }
 
 .btn-secondary {
-    background: rgba(220, 20, 60, 0.2);
-    color: #DC143C;
-    border: 1px solid rgba(220, 20, 60, 0.4);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-color);
+    border: 1px solid rgba(58, 44, 39, 0.1);
     padding: 16px 24px;
     border-radius: 12px;
     font-size: 16px;
@@ -286,94 +296,72 @@ body {
     gap: 8px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .btn-secondary:hover {
-    background: rgba(220, 20, 60, 0.3);
-    border-color: rgba(220, 20, 60, 0.6);
+    background: #ffffff;
+    border-color: rgba(58, 44, 39, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 6px 20px rgba(58, 44, 39, 0.12);
 }
 
 /* ソーシャルリンク */
 .social-links {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
-.social-link {
+.social-icons-row {
     display: flex;
-    align-items: center;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.social-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateX(4px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
+.social-icon-only {
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(58, 44, 39, 0.1);
+    box-shadow: 0 6px 20px rgba(58, 44, 39, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 16px;
-    font-size: 18px;
-    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
-.social-icon.github {
-    background: #333333;
+.social-icon-only:hover {
+    transform: translateY(-3px);
+    border-color: rgba(58, 44, 39, 0.25);
+    box-shadow: 0 14px 30px rgba(58, 44, 39, 0.18);
 }
 
-.social-icon.twitter {
-    background: #1da1f2;
+.social-icon-only i {
+    font-size: 22px;
+    color: var(--text-color);
 }
 
-.social-icon.linkedin {
-    background: #0077b5;
+.social-icon-img {
+    width: 28px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
-.social-icon.instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+.website-logo-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
 }
 
-.social-icon.email {
-    background: #007bff;
-}
-
-.social-info {
-    flex: 1;
-}
-
-.social-name {
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 2px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.social-handle {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.social-arrow {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
+.linkedin-icon {
+    width: 28px;
+    height: auto;
+    display: block;
 }
 
 /* タブセクション */
@@ -386,35 +374,37 @@ body {
     gap: 8px;
     margin-bottom: 20px;
     justify-content: center;
+    background: rgba(244, 230, 214, 0.9);
+    border-radius: 999px;
+    border: 1px solid rgba(58, 44, 39, 0.15);
+    padding: 4px;
 }
 
 .tab-btn {
-    background: rgba(220, 20, 60, 0.2);
-    color: #DC143C;
-    border: 1px solid rgba(220, 20, 60, 0.4);
+    flex: 1;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
     padding: 10px 16px;
-    border-radius: 20px;
+    border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .tab-btn.active {
-    background: rgba(220, 20, 60, 0.5);
-    color: #ffffff;
-    border-color: rgba(220, 20, 60, 0.7);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    background: #ffffff;
+    color: var(--accent);
+    box-shadow: 0 6px 20px rgba(58, 44, 39, 0.12);
     transform: translateY(-1px);
 }
 
 .tab-btn:hover {
-    background: rgba(220, 20, 60, 0.35);
-    border-color: rgba(220, 20, 60, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(58, 44, 39, 0.1);
 }
 
 .tab-content {
@@ -424,9 +414,9 @@ body {
 .tab-panel {
     display: none;
     padding: 20px;
-    background: rgba(220, 20, 60, 0.05);
+    background: var(--panel-bg-soft);
     border-radius: 16px;
-    border: 1px solid rgba(220, 20, 60, 0.2);
+    border: 1px solid var(--soft-border);
     backdrop-filter: blur(10px);
 }
 
@@ -436,18 +426,32 @@ body {
 }
 
 .tab-panel h3 {
-    color: #DC143C;
+    color: var(--accent);
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 .tab-panel p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 10px;
     font-size: 14px;
+}
+
+.about-list {
+    margin: 12px 0 0;
+    padding-left: 24px;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+.about-list li {
+    margin-bottom: 6px;
+    color: var(--text-color);
 }
 
 /* 活動・実績アイテム */
@@ -461,16 +465,16 @@ body {
     display: flex;
     align-items: flex-start;
     padding: 15px;
-    background: rgba(220, 20, 60, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     border-radius: 12px;
     margin-bottom: 12px;
-    border: 1px solid rgba(220, 20, 60, 0.15);
+    border: 1px solid var(--soft-border);
     transition: all 0.3s ease;
 }
 
 .activity-item:hover, .achievement-item:hover {
-    background: rgba(220, 20, 60, 0.1);
-    border-color: rgba(220, 20, 60, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
     transform: translateX(4px);
 }
 
@@ -483,25 +487,25 @@ body {
     justify-content: center;
     margin-right: 15px;
     font-size: 16px;
-    color: #DC143C;
-    background: rgba(220, 20, 60, 0.1);
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(58, 44, 39, 0.15);
     flex-shrink: 0;
     min-width: 40px;
     min-height: 40px;
 }
 
 .activity-item h4, .achievement-item h4 {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     line-height: 1.4;
 }
 
 .activity-item p, .achievement-item p {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--subtext-color);
     font-size: 14px;
     margin: 0;
 }
@@ -558,16 +562,16 @@ body {
     padding-top: 100%; /* 正方形を維持 */
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid rgba(220, 20, 60, 0.3);
-    background: rgba(220, 20, 60, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .picture-item:hover {
     transform: scale(1.05);
-    border-color: rgba(220, 20, 60, 0.6);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .gallery-image {
@@ -627,13 +631,13 @@ body {
     .profile-name {
         font-size: 28px;
         font-weight: 800;
-        color: #DC143C;
-        text-shadow: 0 2px 4px rgba(220, 20, 60, 0.4);
+        color: var(--accent);
+        text-shadow: 0 2px 4px rgba(179, 2, 24, 0.35);
     }
     
     .title {
         font-size: 16px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #1f1410;
         margin: 0 0 4px;
     }
     
@@ -730,13 +734,13 @@ body {
     .profile-name {
         font-size: 32px;
         font-weight: 800;
-        color: #DC143C;
-        text-shadow: 0 2px 4px rgba(220, 20, 60, 0.4);
+        color: var(--accent);
+        text-shadow: 0 2px 4px rgba(179, 2, 24, 0.35);
     }
     
     .title {
         font-size: 18px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #1f1410;
         margin: 0 0 4px;
     }
     
@@ -796,13 +800,13 @@ body {
     .profile-name {
         font-size: 34px;
         font-weight: 800;
-        color: #DC143C;
-        text-shadow: 0 2px 4px rgba(220, 20, 60, 0.4);
+        color: var(--accent);
+        text-shadow: 0 2px 4px rgba(179, 2, 24, 0.35);
     }
     
     .title {
         font-size: 20px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #1f1410;
         margin: 0 0 4px;
     }
     
@@ -881,13 +885,13 @@ body {
     .profile-name {
         font-size: 40px;
         font-weight: 800;
-        color: #DC143C;
-        text-shadow: 0 3px 6px rgba(220, 20, 60, 0.4);
+        color: var(--accent);
+        text-shadow: 0 3px 6px rgba(179, 2, 24, 0.35);
     }
     
     .title {
         font-size: 22px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #1f1410;
         margin: 0 0 4px;
     }
     
@@ -938,12 +942,12 @@ body {
     /* ホバー効果の強化 */
     .social-link:hover {
         transform: translateX(8px);
-        box-shadow: 0 8px 25px rgba(220, 20, 60, 0.15);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
     
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
     }
     
     .btn-secondary:hover {
@@ -983,7 +987,7 @@ body {
     
     .title {
         font-size: 16px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #1f1410;
         margin: 0 0 4px;
     }
     
@@ -1007,9 +1011,9 @@ body {
 }
 
 .toggle-btn {
-    background: rgba(220, 20, 60, 0.1);
-    color: #DC143C;
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 14px;
@@ -1024,10 +1028,10 @@ body {
 }
 
 .toggle-btn:hover {
-    background: rgba(220, 20, 60, 0.2);
-    border-color: rgba(220, 20, 60, 0.5);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .toggle-icon {
@@ -1041,7 +1045,7 @@ body {
 .intro-detail {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(220, 20, 60, 0.2);
+    border-top: 1px solid var(--soft-border);
 }
 
 /* フッター */
@@ -1053,11 +1057,11 @@ body {
 }
 
 .footer p {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--subtext-color);
     font-size: 14px;
     font-weight: 500;
     margin: 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
 
 /* クリック可能な画像 */
@@ -1190,8 +1194,8 @@ body {
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 24px;
-    color: #DC143C;
-    text-shadow: 0 2px 4px rgba(220, 20, 60, 0.3);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .modal-actions {
@@ -1208,10 +1212,10 @@ body {
     gap: 8px;
     width: 100%;
     padding: 16px 24px;
-    background: rgba(220, 20, 60, 0.2);
-    color: #DC143C;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
     text-decoration: none;
-    border: 1px solid rgba(220, 20, 60, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 12px;
     font-weight: 600;
     font-size: 16px;
@@ -1221,10 +1225,10 @@ body {
 }
 
 .modal-button:hover {
-    background: rgba(220, 20, 60, 0.3);
-    border-color: rgba(220, 20, 60, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .modal-close-button {
