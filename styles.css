@@ -328,13 +328,23 @@ body {
 .social-icons-row {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.social-icons-row::-webkit-scrollbar {
+    display: none;
 }
 
 .social-icon-only {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    flex-shrink: 0;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid rgba(58, 44, 39, 0.1);
@@ -354,13 +364,13 @@ body {
 }
 
 .social-icon-only i {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-color);
 }
 
 .social-icon-img-wrapper {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
@@ -369,21 +379,21 @@ body {
 }
 
 .social-icon-img {
-    width: 28px;
+    width: 24px;
     height: auto;
     display: block;
     object-fit: contain;
 }
 
 .website-logo-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     display: block;
 }
 
 .linkedin-icon {
-    width: 28px;
+    width: 24px;
     height: auto;
     display: block;
 }
@@ -713,6 +723,32 @@ body {
     
     .social-handle {
         font-size: 12px;
+    }
+    
+    .social-icons-row {
+        gap: 8px;
+    }
+    
+    .social-icon-only {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+    
+    .social-icon-img-wrapper {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-icon-img,
+    .website-logo-icon,
+    .linkedin-icon {
+        width: 20px;
+        height: auto;
+    }
+    
+    .social-icon-only i {
+        font-size: 18px;
     }
     
     .pictures-gallery {
